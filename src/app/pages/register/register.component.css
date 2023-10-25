@@ -56,6 +56,18 @@ form {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
+.input-form-error {
+  width: 280px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 127, 127);
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 5px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+}
 
 #button-submit {
   width: 100%;
@@ -83,6 +95,18 @@ form {
   color: #FBBC04;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;  
+}
+
+#span-required-error {
+  color: rgb(255, 127, 127);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#container-input-password {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 @media (max-width: 481px) {

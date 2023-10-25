@@ -2,11 +2,14 @@
   <div id="container">
     <h2 id="title-login"> Entre no I <span id="span-keep">Keep</span></h2>
     <form (ngSubmit)="submit()" [formGroup]="userLoginForm" #formDir="ngForm">
-      <input class="input-form" type="email" placeholder="Email" formControlName="email" required/>
-      <span>
-        <input class="input-form" type="password" placeholder="Senha" formControlName="password" required/>
-        <span *ngIf="invalidCredentials">
-          invalid credentials
+      <input class="{{classInput}}" type="email" placeholder="Email" formControlName="email" required/>
+      <span id="container-input-password">
+        <input class="{{classInput}}" type="password" placeholder="Senha" formControlName="password" required/>
+        <span id="invalid-credentials-span" *ngIf="requiredInput">
+          O email e senha são obrigatórios.
+        </span>
+        <span id="invalid-credentials-span" *ngIf="invalidCredentials">
+          Credenciais invalidas.
         </span>
       </span>
       

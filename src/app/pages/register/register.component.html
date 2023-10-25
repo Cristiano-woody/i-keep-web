@@ -1,10 +1,15 @@
 <main id="main">
   <div id="container">
     <h2 id="title-login"> Crie uma nova conta</h2>
-    <form action="">
-      <input class="input-form" type="text" placeholder="Nome" required/>
-      <input class="input-form" type="email" placeholder="Email" required/>
-      <input class="input-form" type="password" placeholder="Senha" required/>
+    <form (ngSubmit)="submit()" [formGroup]="userRegisterForm" #formDir="ngForm">
+      <input class="{{classInput}}" type="text" placeholder="Nome" formControlName="name" required/>
+      <input class="{{classInput}}" type="email" placeholder="Email" formControlName="email" required/>
+      <span id="container-input-password">
+        <input class="{{classInput}}" type="password" placeholder="Senha" formControlName="password" required/>
+        <span id="span-required-error" *ngIf="requiredInputsError">Os campos de cadastro são obrigatórios.</span>
+        <span id="span-required-error" *ngIf="InvalidEmailSpanError">Email não é válido.</span>
+        <span id="span-required-error" *ngIf="InvalidPasswordSpanError">A senha deve ter mais de 5 caracteres.</span>
+      </span>
       <input id="button-submit" type="submit" value="Registre-se" required/>
       <span id="spran-redirect-login"> 
         Já tem uma conta?
