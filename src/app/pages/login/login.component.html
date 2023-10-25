@@ -1,0 +1,20 @@
+<main id="main">
+  <div id="container">
+    <h2 id="title-login"> Entre no I <span id="span-keep">Keep</span></h2>
+    <form (ngSubmit)="submit()" [formGroup]="userLoginForm" #formDir="ngForm">
+      <input class="input-form" type="email" placeholder="Email" formControlName="email" required/>
+      <span>
+        <input class="input-form" type="password" placeholder="Senha" formControlName="password" required/>
+        <span *ngIf="invalidCredentials">
+          invalid credentials
+        </span>
+      </span>
+      
+      <input id="button-submit" type="submit" value="Entrar" required/>
+      <span id="spran-redirect-login"> 
+        Não tem uma conta? 
+        <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page" id="link-redirect-login">Registre-se</a>
+      </span>
+    </form>
+  </div>
+</main>

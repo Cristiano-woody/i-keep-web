@@ -1,0 +1,21 @@
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: #363636;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  padding: 20px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;  
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#span-keep {
+  color: #FBBC04;
+}
+

@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'i-keep-web';
+  logoSrc = '/assets/i-keep-logo.png'
 }
