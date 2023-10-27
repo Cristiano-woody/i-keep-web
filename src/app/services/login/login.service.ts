@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 interface loginResponse {
-  auth_token: string;
+  authToken: string;
+  userId: string;
 }
 
 @Injectable({

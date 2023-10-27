@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
       this.requiredInput = true
       return
     }
-      this.loginService.execute(this.userLoginForm.value).subscribe((result: { auth_token: any; }) => {
-        window.localStorage.setItem('auth_token', `bearer ${result.auth_token}`)
+      this.loginService.execute(this.userLoginForm.value).subscribe((result: { authToken: string; userId: string; }) => {
+        window.localStorage.setItem('authToken', `bearer ${result.authToken}`)
+        window.localStorage.setItem('userId', result.userId)
         this.router.navigate(['']);
       }, (error: any) => {
         this.classInput = 'input-form-error'
