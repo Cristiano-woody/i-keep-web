@@ -18,4 +18,4 @@ export class IconsModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(faCoffee, faRing, faMask, faPersonWalkingArrowRight);
   }
- }
+}

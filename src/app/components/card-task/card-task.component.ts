@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { LoginService } from 'src/app/services/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-task',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-task.component.css']
 })
 export class CardTaskComponent {
-
+  @Input()
+  titleTask: string = ''
+  @Input()
+  descriptionTask: string = ''
 }
