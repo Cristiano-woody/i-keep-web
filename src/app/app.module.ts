@@ -13,6 +13,7 @@ import { HeaderPrivateComponent } from './components/header-private/header-priva
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from './icons/icons.module';
+import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { IconsModule } from './icons/icons.module';
     RegisterComponent,
     HomeComponent,
     CardTaskComponent,
-    HeaderPrivateComponent
+    HeaderPrivateComponent,
+    PopUpCardComponent
   ],
   imports: [
     BrowserModule,
