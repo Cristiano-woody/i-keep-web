@@ -13,7 +13,7 @@ import { HeaderPrivateComponent } from './components/header-private/header-priva
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from './icons/icons.module';
-import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.component';
+import { PopUpCardNoteComponent } from './components/pop-up-card-note/pop-up-card-note.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.compone
     HomeComponent,
     CardTaskComponent,
     HeaderPrivateComponent,
-    PopUpCardComponent
+    PopUpCardNoteComponent
   ],
   imports: [
     BrowserModule,

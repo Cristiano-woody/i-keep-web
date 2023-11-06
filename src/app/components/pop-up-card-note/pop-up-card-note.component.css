@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+#container {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pop-up {
+  width: 500px;
+  height: 300px;
+  background-color: #363636;
+  border: 1px solid #474747;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#container-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-left: 25px;
+}
+
+#buttons {
+  background-color: #3b3b3b;
+  border: 1px solid #3b3b3b;
+  color: #fff;
+  margin-right: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#buttons:hover {
+  cursor: pointer;
+}
+
+#input-title {
+  width: 450px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #3b3b3b;
+  border: none;
+  color: #e4e4e4;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;  
+}
+
+#note-description {
+  width: 450px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #3b3b3b;
+  border: none;
+  color: #e4e4e4;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;  
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+}
