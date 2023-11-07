@@ -12,7 +12,6 @@
 
 #pop-up {
   width: 500px;
-  height: 300px;
   background-color: #363636;
   border: 1px solid #474747;
   border-radius: 10px;
@@ -20,7 +19,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 #form {
@@ -36,6 +35,7 @@
   display: flex;
   justify-content: right;
   margin-left: 25px;
+  margin-bottom: 10px;
 }
 
 #buttons {
@@ -47,7 +47,7 @@
   border-radius: 5px;
 }
 
-#buttons:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -83,4 +83,22 @@ select:focus {
   outline: none;
   box-shadow: none;
   border-color: transparent;
+}
+
+#container-close-popup {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 0;
+}
+
+#close-popup {
+  margin-top: 10px;
+  margin-right: 20px;
+  background-color: #3b3b3b;
+  border: 1px solid #3b3b3b;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
