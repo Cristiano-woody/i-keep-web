@@ -1,7 +1,7 @@
 <div id="container">
   <div id="pop-up">
     <div id="container-close-popup">
-      <button id="close-popup" (click)="delete()">X</button>
+      <button id="close-popup" (click)="close()">X</button>
     </div>
     <form (ngSubmit)="submit()" id="form" [formGroup]="popUpForm" #formDir="ngForm">
       <input type="text" id="input-title" placeholder="Título da nota" autocomplete="off" formControlName="title" required >

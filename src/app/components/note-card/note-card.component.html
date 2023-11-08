@@ -1,0 +1,5 @@
+<div id="container" (click)="togglePopup()">
+  <h3 id="card-title">{{noteTitle}}</h3>
+  <p id="card-description">{{noteDescription}}</p>
+</div>
+<note-popup id="note-popup" (closePopup)="togglePopup()" [contentTitleInput]="noteTitle" [contentTextArea]="noteDescription" [noteId]="noteId" *ngIf="popupIsOpen"></note-popup>

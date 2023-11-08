@@ -2,9 +2,21 @@
 
 #main {
   width: 100%;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: #262626;
+  overflow: auto;
 }
+
+.container-notes-grid {
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  grid-template-rows: repeat(auto-fill, 100px);
+  justify-content: center;
+  gap: 20px;
+}
+

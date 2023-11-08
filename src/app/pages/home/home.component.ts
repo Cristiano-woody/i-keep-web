@@ -6,6 +6,66 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  descriptionTask = 'Uma Descricao qualquer de uma task'
-  titleTask = 'Um titulo qualquer'
+  notes = [
+    {
+      title: 'Um titulo ',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'Um  qualquer',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'titulo qualquer',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'Um',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'titulo ',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'qualquer',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'Um titulo ',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'Um  qualquer',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'titulo qualquer',
+      description:'Uma Descricao qualquer de uma task ',
+      id: '123123123'
+    },
+    {
+      title: 'Um',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'titulo ',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    },
+    {
+      title: 'qualquer',
+      description:'Uma Descricao qualquer de uma task',
+      id: '123123123'
+    }
+  ]
 }

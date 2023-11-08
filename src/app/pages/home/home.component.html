@@ -1,3 +1,5 @@
 <main id="main">
-    <app-pop-up-card-note></app-pop-up-card-note>
+    <div class="container-notes-grid">
+        <note-card *ngFor="let note of notes" [noteTitle]="note.title" [noteDescription]="note.description" [noteId]="note.id"></note-card>
+    </div>
 </main>

@@ -2,11 +2,11 @@ import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-pop-up-card-note',
-  templateUrl: './pop-up-card-note.component.html',
-  styleUrls: ['./pop-up-card-note.component.css']
+  selector: 'note-popup',
+  templateUrl: './note-popup.component.html',
+  styleUrls: ['./note-popup.component.css']
 })
-export class PopUpCardNoteComponent {
+export class NotePopupComponent {
 
   popUpForm!: FormGroup
   
@@ -24,8 +24,8 @@ export class PopUpCardNoteComponent {
 
   ngOnInit(): void {
     this.popUpForm = new FormGroup({
-      title: new FormControl(this.contentTextArea),
-      description: new FormControl(this.contentTitleInput),
+      title: new FormControl(this.contentTitleInput),
+      description: new FormControl(this.contentTextArea),
     })
   }
 

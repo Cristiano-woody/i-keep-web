@@ -8,12 +8,12 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CardTaskComponent } from './components/card-task/card-task.component';
+import { NoteCardComponent } from './components/note-card/note-card.component';
 import { HeaderPrivateComponent } from './components/header-private/header-private.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from './icons/icons.module';
-import { PopUpCardNoteComponent } from './components/pop-up-card-note/pop-up-card-note.component';
+import { NotePopupComponent } from './components/note-popup/note-popup.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { PopUpCardNoteComponent } from './components/pop-up-card-note/pop-up-car
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    CardTaskComponent,
+    NoteCardComponent,
     HeaderPrivateComponent,
-    PopUpCardNoteComponent
+    NotePopupComponent
   ],
   imports: [
     BrowserModule,

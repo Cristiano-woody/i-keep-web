@@ -33,5 +33,9 @@
   transform: scale(1.025);
 }
 
+#note-popup {
+  position: relative;
+}
+
 @media (max-width: 481px) {
 }
