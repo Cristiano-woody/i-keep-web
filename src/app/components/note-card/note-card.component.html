@@ -2,4 +2,4 @@
   <h3 id="card-title">{{noteTitle}}</h3>
   <p id="card-description">{{noteDescription}}</p>
 </div>
-<note-popup id="note-popup" (closePopup)="togglePopup()" [contentTitleInput]="noteTitle" [contentTextArea]="noteDescription" [noteId]="noteId" *ngIf="popupIsOpen"></note-popup>
+<note-popup id="note-popup" (deleteNoteOut)="deleteNote()" (updateNoteOut)="updateNote($event)" (closePopupOut)="togglePopup()" [contentTitleInput]="noteTitle" [contentTextArea]="noteDescription"  *ngIf="popupIsOpen"></note-popup>

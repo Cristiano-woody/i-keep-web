@@ -14,12 +14,10 @@ export class NotePopupComponent {
   contentTextArea = ""
   @Input()
   contentTitleInput = ""
-  @Input()
-  noteId = ""
 
-  @Output() submitNote = new EventEmitter<any>();
-  @Output() deleteNote = new EventEmitter<any>();
-  @Output() closePopup = new EventEmitter<any>();
+  @Output() updateNoteOut = new EventEmitter<{title: string, description: string}>();
+  @Output() deleteNoteOut = new EventEmitter<null>();
+  @Output() closePopupOut = new EventEmitter<null>();
 
 
   ngOnInit(): void {
@@ -29,18 +27,15 @@ export class NotePopupComponent {
     })
   }
 
-  submit(): void {
-    console.log(this.popUpForm.value)
-    this.submitNote.emit(this.popUpForm.value);
+  update(): void {
+    this.updateNoteOut.emit(this.popUpForm.value);
   }
 
   delete(): void {
-    console.log('delete')
-    this.deleteNote.emit(this.noteId);
+    this.deleteNoteOut.emit(null);
   }
 
   close(): void {
-    console.log('close')
-    this.closePopup.emit(null);
+    this.closePopupOut.emit(null);
   }
 }

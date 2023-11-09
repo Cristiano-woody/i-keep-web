@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
@@ -16,10 +16,22 @@ export class NoteCardComponent {
   @Input()
   noteId: string = ''
 
+  @Output() deleteNoteOut = new EventEmitter<string>();
+  @Output() updateNoteOut = new EventEmitter<{noteId: string, title: string, description: string}>();
+
   popupIsOpen: boolean = false
 
   togglePopup() {
-    if (this.popupIsOpen === true) return this.popupIsOpen = false
-    return this.popupIsOpen = true
+    this.popupIsOpen = !this.popupIsOpen
   }
+
+  deleteNote() {
+    this.deleteNoteOut.emit(this.noteId);
+    this.togglePopup()
+  }
+
+  updateNote({title, description}: {title: string, description:string}) {
+    this.updateNoteOut.emit({noteId: this.noteId, description: this.noteDescription, title: this.noteTitle})
+  }
+
 }
