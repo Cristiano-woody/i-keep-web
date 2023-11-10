@@ -69,11 +69,21 @@ export class HomeComponent {
     }
   ]
 
-  deleteNote(noteID: string) {
-    console.log('delete note in home')
+  deleteNote(noteId: string) {
+    for (let i = 0; i < this.notes.length; i++) {
+      if(this.notes[i].id === noteId) {
+        this.notes.splice(i, 1);
+      }      
+    }
   }
 
   updateNote({noteId, description, title}:{noteId: string, description: string, title: string}) {
-    console.log(noteId, description, title)
+    for (let i = 0; i < this.notes.length; i++) {
+      if(this.notes[i].id === noteId) {
+        this.notes[i].title = title;
+        this.notes[i].description = description;
+      }      
+    }
+    console.log(noteId + description + title);
   }
 }

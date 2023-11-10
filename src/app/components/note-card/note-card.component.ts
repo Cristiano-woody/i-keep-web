@@ -31,7 +31,8 @@ export class NoteCardComponent {
   }
 
   updateNote({title, description}: {title: string, description:string}) {
-    this.updateNoteOut.emit({noteId: this.noteId, description: this.noteDescription, title: this.noteTitle})
+    this.updateNoteOut.emit({noteId: this.noteId, description: description, title: title})
+    this.togglePopup()
   }
 
 }
