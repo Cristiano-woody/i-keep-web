@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from './icons/icons.module';
 import { NotePopupComponent } from './components/note-popup/note-popup.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { NotePopupComponent } from './components/note-popup/note-popup.component
     HttpClientModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    IconsModule
+    IconsModule,
+    StoreModule.forRoot({ app: appReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

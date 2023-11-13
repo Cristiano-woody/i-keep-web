@@ -1,5 +1,5 @@
 <main id="main">
     <div class="container-notes-grid">
-        <note-card *ngFor="let note of notes" (deleteNoteOut)="deleteNote($event)" (updateNoteOut)="updateNote($event)" [noteTitle]="note.title" [noteDescription]="note.description" [noteId]="note.id"></note-card>
+        <note-card *ngFor="let note of (notes$ | async)" (deleteNoteOut)="deleteNote($event)" (updateNoteOut)="updateNote($event)" [noteTitle]="note.title" [noteDescription]="note.description" [noteId]="note.id"></note-card>
     </div>
 </main>

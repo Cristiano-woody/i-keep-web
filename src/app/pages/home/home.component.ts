@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs';
+import { IAppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-home',
@@ -6,84 +9,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  notes = [
-    {
-      title: 'Um titulo ',
-      description:'Uma Descricao qualquer de uma task',
-      id: '1'
-    },
-    {
-      title: 'Um  qualquer',
-      description:'Uma Descricao qualquer de uma task',
-      id: '2'
-    },
-    {
-      title: 'titulo qualquer',
-      description:'Uma Descricao qualquer de uma task',
-      id: '3'
-    },
-    {
-      title: 'Um',
-      description:'Uma Descricao qualquer de uma task',
-      id: '4'
-    },
-    {
-      title: 'titulo ',
-      description:'Uma Descricao qualquer de uma task',
-      id: '5'
-    },
-    {
-      title: 'qualquer',
-      description:'Uma Descricao qualquer de uma task',
-      id: '6'
-    },
-    {
-      title: 'Um titulo ',
-      description:'Uma Descricao qualquer de uma task',
-      id: '7'
-    },
-    {
-      title: 'Um  qualquer',
-      description:'Uma Descricao qualquer de uma task',
-      id: '8'
-    },
-    {
-      title: 'titulo qualquer',
-      description:'Uma Descricao qualquer de uma task ',
-      id: '9'
-    },
-    {
-      title: 'Um',
-      description:'Uma Descricao qualquer de uma task',
-      id: '10'
-    },
-    {
-      title: 'titulo ',
-      description:'Uma Descricao qualquer de uma task',
-      id: '11'
-    },
-    {
-      title: 'qualquer',
-      description:'Uma Descricao qualquer de uma task',
-      id: '12'
-    }
-  ]
+  notes$ = this.store.select('app').pipe(
+    map(e => e.notes)
+  )
 
-  deleteNote(noteId: string) {
-    for (let i = 0; i < this.notes.length; i++) {
-      if(this.notes[i].id === noteId) {
-        this.notes.splice(i, 1);
-      }      
-    }
-  }
+  constructor(private store: Store<{app: IAppState}>) {}
 
   updateNote({noteId, description, title}:{noteId: string, description: string, title: string}) {
-    for (let i = 0; i < this.notes.length; i++) {
-      if(this.notes[i].id === noteId) {
-        this.notes[i].title = title;
-        this.notes[i].description = description;
-      }      
-    }
     console.log(noteId + description + title);
+  }
+
+  deleteNote(noteId: string) {
+    console.log(noteId);
   }
 }
