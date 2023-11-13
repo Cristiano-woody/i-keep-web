@@ -1,10 +1,5 @@
-import { createReducer } from '@ngrx/store';
-
-interface note {
-  title: string;
-  description: string;
-  id: string;
-}
+import { createAction, createReducer, on, props } from '@ngrx/store';
+import { note } from '../entities/note';
 
 export interface IAppState {
   userId: string;
@@ -22,4 +17,15 @@ export const appInitialState: IAppState = {
   }],
 };
 
-export const appReducer = createReducer(appInitialState);
+export const setUserId = createAction("[App] set user id", props<{id: string}>())
+
+export const setAuthToken = createAction("[App] set auth token", props<{token: string}>())
+
+export const setNotes = createAction("[App] set notes", props<{notes: note[]}>())
+
+export const appReducer = createReducer(
+  appInitialState,
+  on(setUserId, (state, { id }) => ({ ...state, userId: id })),
+  on(setAuthToken, (state, { token }) => ({ ...state, authToken: token })),
+  on(setNotes, (state, { notes }) => ({ ...state, notes: notes}))
+);
