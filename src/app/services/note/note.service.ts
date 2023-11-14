@@ -16,6 +16,6 @@ export class NoteService {
     const headers = new HttpHeaders({
       'Authorization': window.localStorage.getItem('authToken') ?? ''
     });
-    return this.http.get<note[]>(this.urlNote, {headers: headers})
+    return this.http.get<note[]>(this.urlNote + "/" + window.localStorage.getItem("userId"), {headers: headers})
   }
 }

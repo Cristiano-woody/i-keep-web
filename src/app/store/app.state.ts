@@ -10,11 +10,7 @@ export interface IAppState {
 export const appInitialState: IAppState = {
   userId: '',
   authToken: '',
-  notes: [{
-    title: 'teste',
-    description: 'teste',
-    id: '1'
-  }],
+  notes: [],
 };
 
 export const setUserId = createAction("[App] set user id", props<{id: string}>())
