@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { NoteService } from 'src/app/services/note/note.service';
-import { IAppState, setNotes } from 'src/app/store/app.state';
+import {IAppState, loadNotes, setNotes} from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-home',
@@ -17,17 +17,13 @@ export class HomeComponent {
 
   constructor(private store: Store<{app: IAppState}>, private noteService: NoteService) {}
 
-  ngOnInit() {
-    this.noteService.findAll().subscribe((notes) => {
-      this.store.dispatch(
-        setNotes({notes: notes})
-      );
-    })
+  updateNote({noteId, description, title}:{noteId: string, description: string, title: string}) {
+    console.log(noteId + description + title);
   }
 
 
-  updateNote({noteId, description, title}:{noteId: string, description: string, title: string}) {
-    console.log(noteId + description + title);
+  ngOnInit() {
+      this.store.dispatch(loadNotes())
   }
 
   deleteNote(noteId: string) {
