@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { NoteService } from 'src/app/services/note/note.service';
-import {IAppState, loadNotes, setNotes} from 'src/app/store/app.state';
+import {IAppState, loadNotes} from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +23,7 @@ export class HomeComponent {
 
 
   ngOnInit() {
-      this.store.dispatch(loadNotes())
+    this.store.dispatch(loadNotes())
   }
 
   deleteNote(noteId: string) {

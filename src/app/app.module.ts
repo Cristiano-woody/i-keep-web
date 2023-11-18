@@ -17,6 +17,7 @@ import { NotePopupComponent } from './components/note-popup/note-popup.component
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.state';
 import { EffectsModule } from '@ngrx/effects';
+import {AppEffectsService} from "./store/app-effects.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { EffectsModule } from '@ngrx/effects';
     FontAwesomeModule,
     IconsModule,
     StoreModule.forRoot({ app: appReducer }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([AppEffectsService])
   ],
   providers: [],
   bootstrap: [AppComponent]

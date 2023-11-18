@@ -18,7 +18,7 @@ export class AppEffectsService {
   ) {
   }
 
-  public loadNotes = createEffect(() => this.actions$.pipe(
+  public loadNote = createEffect(() => this.actions$.pipe(
       ofType(loadNotes),
       switchMap(() =>
         this.noteService.findAll()
