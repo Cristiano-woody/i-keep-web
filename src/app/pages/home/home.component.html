@@ -2,4 +2,7 @@
     <div class="container-notes-grid">
         <note-card *ngFor="let note of (notes$ | async)" (deleteNoteOut)="deleteNote($event)" (updateNoteOut)="updateNote($event)" [noteTitle]="note.title" [noteDescription]="note.description" [noteId]="note.id"></note-card>
     </div>
+    <div id="button-add-note">
+        <fa-icon id="plusIcon" [icon]="['fas','plus']" size="3x" [styles]="{'color': '#262626'}"></fa-icon>
+    </div>
 </main>
