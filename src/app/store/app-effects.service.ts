@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, of, switchMap, tap} from "rxjs";
-import {IAppState, loadNotes, setNotes, successSetNotes} from "./app.state";
+import {IAppState, deleteNoteAction, loadNotesAction, setNotesAction, successSetNotesAction, updateNoteAction,} from "./app.state";
 import {NoteService} from "../services/note/note.service";
 import {Store} from "@ngrx/store";
 
@@ -18,14 +18,30 @@ export class AppEffectsService {
   ) {
   }
 
-  public loadNote = createEffect(() => this.actions$.pipe(
-      ofType(loadNotes),
+  public loadNoteEffect = createEffect(() => this.actions$.pipe(
+      ofType(loadNotesAction),
       switchMap(() =>
         this.noteService.findAll()
       ),
       tap((notes) =>
-        this.store.dispatch(setNotes({ notes: notes }))
+        this.store.dispatch(setNotesAction({ notes: notes }))
       ),
-      map( () => successSetNotes())
-    ) )
+      map( () => successSetNotesAction())
+    ))
+
+    public deleteNoteEffect = createEffect(() => this.actions$.pipe(
+      ofType(deleteNoteAction),
+      switchMap(({noteId}) => 
+        this.noteService.delete(noteId)
+      ),
+      map(() => successSetNotesAction())
+    ));
+
+    public updateNoteEffect = createEffect(() => this.actions$.pipe(
+      ofType(updateNoteAction),
+      switchMap(({noteId, title, description}) => 
+        this.noteService.update({noteId, title, description})
+      ),
+      map(() => successSetNotesAction())
+    ));
 }

@@ -18,4 +18,18 @@ export class NoteService {
     });
     return this.http.get<note[]>(this.urlNote + "/" + window.localStorage.getItem("userId"), {headers: headers})
   }
+
+  delete(noteId: string): Observable<void> {
+    const headers = new HttpHeaders({
+      'Authorization': window.localStorage.getItem('authToken') ?? ''
+    });
+    return this.http.delete<void>(this.urlNote + "/" + noteId, {headers: headers})
+  }
+
+  update({noteId, title, description} : { noteId: string, title: string, description: string}): Observable<void> {
+    const headers = new HttpHeaders({
+      'Authorization': window.localStorage.getItem('authToken') ?? ''
+    });
+    return this.http.patch<void>(this.urlNote + "/" + noteId, { title: title, description: description} , {headers: headers})
+  }
 }

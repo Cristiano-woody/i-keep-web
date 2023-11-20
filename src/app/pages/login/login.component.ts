@@ -4,10 +4,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
-  IAppState,
-  setAuthToken,
-  setNotes,
-  setUserId,
+  IAppState
 } from 'src/app/store/app.state';
 
 @Component({
@@ -50,10 +47,6 @@ export class LoginComponent implements OnInit {
       (result: { authToken: string; userId: string }) => {
         window.localStorage.setItem('authToken', `bearer ${result.authToken}`);
         window.localStorage.setItem('userId', result.userId);
-        this.store.dispatch(
-          setAuthToken({ token: `bearer ${result.authToken}` })
-        );
-        this.store.dispatch(setUserId({ id: result.userId }));
         this.router.navigate(['']);
       },
       (error: any) => {
