@@ -9,6 +9,32 @@
   overflow: auto;
 }
 
+#container-add-note-card {
+  padding: 10px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: #3636369a;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+
+#container-add-note-card:hover {
+  transform: scale(1.010);
+  cursor: pointer;
+}
+
+#title-add-note-card {
+  margin: 0;
+  color: #ffffffcc;
+  font-family: 'Roboto', sans-serif;  
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .container-notes-grid {
   width: 90%;
   margin-top: 50px;
@@ -34,6 +60,7 @@
   margin-top: 80vh;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
+  display: none;
 }
 
 #plus-icon {

@@ -15,6 +15,7 @@ export const setNotesAction = createAction("[App] set notes", props<{notes: note
 export const successSetNotesAction = createAction("[App] [notes] success set notes")
 export const deleteNoteAction = createAction("[APP] delete note", props<{noteId: string}>())
 export const updateNoteAction = createAction("[APP] update note", props<{noteId: string, title: string, description: string}>())
+export const saveNoteAction = createAction("[APP] save note", props<{ id: string, title: string, description: string}>())
 
 export const appReducer = createReducer(
   appInitialState,
@@ -28,5 +29,9 @@ export const appReducer = createReducer(
       }
       return note;
     }),
-  }))
+  })),
+  on(saveNoteAction, (state, { title, description, id }) => ({
+    ...state,
+    notes: [...state.notes, { id, title, description }]
+  })),
 );

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
+import { note } from 'src/app/entities/note';
 import { NoteService } from 'src/app/services/note/note.service';
-import {IAppState, deleteNoteAction, loadNotesAction, updateNoteAction} from 'src/app/store/app.state';
+import {IAppState, deleteNoteAction, loadNotesAction, saveNoteAction, updateNoteAction} from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class HomeComponent {
   notes$ = this.store.select('app').pipe(
     map(e => e.notes)
   )
+
+  popUpCreateNoteIsOpen = false
 
   constructor(private store: Store<{app: IAppState}>, private noteService: NoteService) {}
 
@@ -27,5 +30,18 @@ export class HomeComponent {
 
   deleteNote(noteId: string) {
     this.store.dispatch(deleteNoteAction({noteId:noteId}))
+  }
+
+  togglePopUpCreateNote() {
+    this.popUpCreateNoteIsOpen = !this.popUpCreateNoteIsOpen
+  }
+
+  saveNote(data: {title: string, description: string}) {
+    this.noteService.save(data).subscribe((newNote: note) => {
+      this.store.dispatch(saveNoteAction(newNote))
+      this.togglePopUpCreateNote()
+    }, (err) => {
+      console.log(err)
+    })
   }
 }

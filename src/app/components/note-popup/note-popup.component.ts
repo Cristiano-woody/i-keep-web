@@ -14,6 +14,8 @@ export class NotePopupComponent {
   contentTextArea = ""
   @Input()
   contentTitleInput = ""
+  @Input()
+  buttonExcluirIsVIsible = true
 
   @Output() updateNoteOut = new EventEmitter<{title: string, description: string}>();
   @Output() deleteNoteOut = new EventEmitter<null>();

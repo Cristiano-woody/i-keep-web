@@ -32,4 +32,11 @@ export class NoteService {
     });
     return this.http.patch<void>(this.urlNote + "/" + noteId, { title: title, description: description} , {headers: headers})
   }
+
+  save(data: {title: string, description: string}): Observable<note> {
+    const headers = new HttpHeaders({
+      'Authorization': window.localStorage.getItem('authToken') ?? ''
+    });
+    return this.http.post<note>(this.urlNote, {title: data.title, description: data.description, userId: window.localStorage.getItem('userId')} , {headers: headers})
+  }
 }

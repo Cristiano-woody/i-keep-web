@@ -7,7 +7,7 @@
       <input type="text" id="input-title" placeholder="Título da nota" autocomplete="off" formControlName="title" required >
       <textarea id="note-description"  rows="5" cols="50" placeholder="Descrição da nota" autocomplete="off" formControlName="description" required></textarea>
       <div id="container-buttons">
-        <button (click)="delete()" type="button" id="buttons">Excluir</button>
+        <button *ngIf="buttonExcluirIsVIsible" (click)="delete()" type="button" id="buttons">Excluir</button>
         <button type="submit" id="buttons">Salvar</button>
       </div>
     </form>
