@@ -41,17 +41,21 @@
   margin-bottom: 10px;
 }
 
-#buttons {
-  background-color: #3b3b3b;
-  border: 1px solid #3b3b3b;
+.buttons {
+  background-color: transparent;
+  border: none;
   color: #fff;
   margin-right: 15px;
-  padding: 5px 10px;
+  padding: 8px 18px;
   border-radius: 5px;
+  transition: all 0.1s ease-in-out;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; 
 }
 
 button:hover {
   cursor: pointer;
+  background: #3b3b3b;
 }
 
 #input-title {
@@ -59,12 +63,17 @@ button:hover {
   height: 30px;
   padding: 5px;
   border-radius: 5px;
-  background: #3b3b3b;
+  background: transparent;
   border: none;
   color: #e4e4e4;
   font-weight: 500;
   font-size: 18px;
-  font-family: 'Roboto', sans-serif;  
+  font-family: 'Roboto', sans-serif; 
+  transition: all 0.2s ease-in-out; 
+}
+
+#input-title:hover {
+  background: #3b3b3b;
 }
 
 #note-description {
@@ -72,12 +81,27 @@ button:hover {
   height: 150px;
   padding: 5px;
   border-radius: 5px;
-  background: #3b3b3b;
+  background: transparent;
   border: none;
   color: #e4e4e4;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Roboto', sans-serif;  
+  transition: all 0.2s ease-in-out;
+  resize: none;
+}
+
+#note-description::-webkit-scrollbar {
+  width: 8px;
+}
+
+#note-description::-webkit-scrollbar-thumb {
+  background-color: #474747;
+  border-radius: 5px; 
+}
+
+#note-description:hover {
+  background: #3b3b3b;
 }
 
 input:focus,
@@ -88,7 +112,7 @@ select:focus {
   border-color: transparent;
 }
 
-#container-close-popup {
+#close-popup-container {
   width: 100%;
   display: flex;
   justify-content: right;
@@ -96,12 +120,45 @@ select:focus {
   margin: 0;
 }
 
-#close-popup {
+#close-popup-button {
   margin-top: 10px;
-  margin-right: 20px;
-  background-color: #3b3b3b;
-  border: 1px solid #3b3b3b;
-  color: #fff;
-  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #ffffff8f;
+  padding: 10px 12px;
   border-radius: 5px;
+  transition: all 0.2s ease-in-out; 
+}
+
+#close-popup-button:hover {
+  background: #3b3b3b;
+}
+
+@media (max-width: 481px) {
+  #pop-up {
+    width: 320px;
+    gap: 10px;
+  }
+  #input-title {
+    width: 300px;
+  }
+  #note-description {
+    width: 300px;
+    height: 150px
+  }
+}
+
+@media (max-width: 321px) {
+  #pop-up {
+    width: 300px;
+    gap: 10px;
+  }
+  #input-title {
+    width: 280px;
+  }
+  #note-description {
+    width: 280px;
+    height: 100px
+  }
 }

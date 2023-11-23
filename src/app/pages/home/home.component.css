@@ -16,7 +16,6 @@
   flex-direction: column;
   background: #3636369a;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease-in-out;
   align-items: center;
   justify-content: center;
@@ -29,7 +28,7 @@
 
 #title-add-note-card {
   margin: 0;
-  color: #ffffffcc;
+  color: #ffffff62;
   font-family: 'Roboto', sans-serif;  
   font-size: 18px;
   font-weight: 500;
@@ -56,11 +55,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 85vw;
-  margin-top: 80vh;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   display: none;
+  margin-top: 79vh;
+  margin-left: 70vw;
 }
 
 #plus-icon {
@@ -69,4 +68,13 @@
 
 #button-add-note:hover {
   transform: scale(1.04);
+}
+
+@media (max-width: 450px) {
+  #container-add-note-card {
+    display: none;
+  }
+  #button-add-note {
+    display: flex;
+  }
 }

@@ -6,8 +6,8 @@
         </div>
         <note-card *ngFor="let note of (notes$ | async)" (deleteNoteOut)="deleteNote($event)" (updateNoteOut)="updateNote($event)" [noteTitle]="note.title" [noteDescription]="note.description" [noteId]="note.id"></note-card>
     </div>
+    <note-popup *ngIf="popUpCreateNoteIsOpen" [buttonExcluirIsVIsible]= false (updateNoteOut)="saveNote($event)" (closePopupOut)="togglePopUpCreateNote()"></note-popup>
     <div id="button-add-note" (click)="togglePopUpCreateNote()">
         <fa-icon id="plusIcon" [icon]="['fas','plus']" size="3x" [styles]="{'color': '#262626'}"></fa-icon>
     </div>
-    <note-popup *ngIf="popUpCreateNoteIsOpen" [buttonExcluirIsVIsible]= false (updateNoteOut)="saveNote($event)" (closePopupOut)="togglePopUpCreateNote()"></note-popup>
 </main>

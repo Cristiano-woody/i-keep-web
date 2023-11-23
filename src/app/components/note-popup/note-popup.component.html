@@ -1,14 +1,18 @@
 <div id="container">
   <div id="pop-up">
-    <div id="container-close-popup">
-      <button id="close-popup" (click)="close()">X</button>
+    <div id="close-popup-container">
+      <button id="close-popup-button" (click)="close()">
+        <fa-icon [icon]="['fas','x']" size="1x" [styles]="{'color': '#ffffff62'}"></fa-icon>
+      </button>
     </div>
     <form (ngSubmit)="update()" id="form" [formGroup]="popUpForm" #formDir="ngForm">
-      <input type="text" id="input-title" placeholder="Título da nota" autocomplete="off" formControlName="title" required >
-      <textarea id="note-description"  rows="5" cols="50" placeholder="Descrição da nota" autocomplete="off" formControlName="description" required></textarea>
+      <input type="text" id="input-title" placeholder="Título da nota" autocomplete="off" formControlName="title"
+        required>
+      <textarea id="note-description" rows="5" cols="50" placeholder="Descrição da nota" autocomplete="off"
+        formControlName="description" required></textarea>
       <div id="container-buttons">
-        <button *ngIf="buttonExcluirIsVIsible" (click)="delete()" type="button" id="buttons">Excluir</button>
-        <button type="submit" id="buttons">Salvar</button>
+        <button *ngIf="buttonExcluirIsVIsible" (click)="delete()" type="button" class="buttons">Excluir</button>
+        <button type="submit" class="buttons">Salvar</button>
       </div>
     </form>
   </div>

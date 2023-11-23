@@ -4,13 +4,13 @@
 #container {
   padding: 10px;
   max-width: 300px;
-  gap: 10px;
+  gap: 5px;
   display: flex;
   flex-direction: column;
   background: #363636;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.2s ease-in-out;
+  justify-content: center;
 }
 
 #card-title {
@@ -19,6 +19,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: normal;
+  margin-top: 5px;
 }
 
 #card-description {
@@ -42,4 +43,10 @@
 }
 
 @media (max-width: 481px) {
+}
+
+@media (max-width: 321px) {
+  #container {
+    max-width: 280px;
+  }
 }

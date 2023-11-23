@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee, faMask, faRing, faPersonWalkingArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faMask, faRing, faPersonWalkingArrowRight, faPlus, faX } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -16,6 +16,6 @@ import { faCoffee, faMask, faRing, faPersonWalkingArrowRight, faPlus } from '@fo
 })
 export class IconsModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faCoffee, faRing, faMask, faPersonWalkingArrowRight, faPlus);
+    library.addIcons(faCoffee, faRing, faMask, faPersonWalkingArrowRight, faPlus, faX);
   }
 }
