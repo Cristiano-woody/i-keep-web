@@ -12,7 +12,7 @@ interface loginResponse {
 })
 export class LoginService {
 
-  private urlLogin: string = 'http://localhost:8080/auth/login'
+  private urlLogin: string = 'http://localhost:8080/user/login'
 
   constructor(private http: HttpClient) { }
 
