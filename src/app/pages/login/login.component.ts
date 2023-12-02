@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.execute(this.userLoginForm.value).subscribe(
       (result: { authToken: string; userId: string }) => {
-        window.localStorage.setItem('authToken', `bearer ${result.authToken}`);
+        window.localStorage.setItem('authToken', `Bearer ${result.authToken}`);
         window.localStorage.setItem('userId', result.userId);
         this.router.navigate(['']);
       },
